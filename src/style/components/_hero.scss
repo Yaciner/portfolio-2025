@@ -1,0 +1,71 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: $gutter-l;
+
+  h1 {
+    font-family: fit-variable, sans-serif;
+    font-weight: 400;
+    font-size: 30vw;
+    height: 23vw;
+    white-space: nowrap;
+    font-variation-settings: "wdth" 0;
+    line-height: 1;
+    animation: title 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 2.4s;
+    opacity: 0;
+  }
+
+  .subtitle {
+    position: relative;
+    text-transform: uppercase;
+    font-variation-settings: "opsz" 6, "slnt" 0, "wght" 300;
+    white-space: nowrap;
+    font-size: fluid(32px, 48px);
+    padding-left: 0px;
+    margin-bottom: $gutter-s;
+    padding-left: calc(10vw + $gutter-m);
+    animation: subtitle 1.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 2.4s;
+    opacity: 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 10vw;
+      left: 0;
+      height: rem(1);
+      background-color: $white;
+      top: 50%;
+      translate: 0 -50%;
+    }
+  }
+}
+
+@keyframes subtitle {
+  0% {
+    font-variation-settings: "opsz" 2, "slnt" 0, "wght" 700;
+  }
+  100% {
+    font-variation-settings: "opsz" 6, "slnt" 0, "wght" 300;
+    opacity: 1;
+  }
+}
+
+@keyframes title {
+  0% {
+    font-variation-settings: "wdth" 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    font-variation-settings: "wdth" 766;
+    opacity: 1;
+  }
+}

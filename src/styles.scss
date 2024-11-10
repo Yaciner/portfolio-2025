@@ -1,0 +1,47 @@
+// base configurations
+@import './style/base/_reset.scss';
+@import './style/base/_variables.scss';
+
+
+//mixins
+@import './style/mixins/_rem.scss';
+@import './style/mixins/_fluid.scss';
+
+//styles
+@import './style/components/_header.scss';
+@import './style/components/_hero.scss';
+
+
+* {
+  font-family: "adelphi-pe-variable", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary;
+  opacity: 1;
+  scale: 1;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  lord-icon {
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+
+  &.loaded {
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+
+    lord-icon {
+      scale: .6;
+      opacity: 0;
+    }
+  }
+}

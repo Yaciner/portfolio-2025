@@ -1,0 +1,9 @@
+@use "sass:math";
+
+// This function will calculate the rem value of pixel value input
+@function rem($size) {
+  @if (unitless($size)) {
+    $size: $size * 1px;
+  }
+  @return math.div($size, $base-font-size) * 1rem;
+}
